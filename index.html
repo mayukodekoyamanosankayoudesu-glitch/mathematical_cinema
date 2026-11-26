@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="算数から、数学へ。数と形の映像美術館。">
+<title>MATHEMATICAL CINEMA — 算数から、数学へ。</title>
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="catalog.js"></script>
+<script defer src="assets/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#rooms">展示室へ</a>
+
+<header class="bar">
+  <a class="brand" href="#foyer">MATHEMATICAL <span>CINEMA</span></a>
+  <nav><a href="#rooms">展示室</a><a href="#about">この美術館について</a></nav>
+</header>
+
+<main>
+  <!-- ホワイエ：係数がゆっくり変わり、線の造形が生まれ変わり続ける -->
+  <section id="foyer" class="foyer">
+    <canvas id="loom" aria-hidden="true"></canvas>
+    <div class="foyer-copy">
+      <p class="eyebrow">THE ART OF MATHEMATICS</p>
+      <h1>算数から、<br>数学へ。</h1>
+      <p class="lead">美しいから、見入ってしまう。<br>見入っているうちに、数学が見えてくる。</p>
+      <a class="enter" href="#rooms">展示室へ進む</a>
+    </div>
+    <p class="loom-caption" aria-live="off">
+      <span class="k">円周を <b id="loom-n">200</b> 等分し、点 k を点 <b id="loom-m">2.00</b> × k と結ぶ</span>
+    </p>
+    <button class="loom-toggle" type="button" aria-pressed="false">動きを止める</button>
+  </section>
+
+  <!-- 展示室：1作品ずつ、壁に掛けた絵とキャプションのように -->
+  <section id="rooms" class="rooms" aria-label="展示室"></section>
+
+  <section id="about" class="about">
+    <p class="eyebrow">OUR PHILOSOPHY</p>
+    <h2>数学そのものが、<br>美しさの理由になる。</h2>
+    <p>小学校で学ぶ数や図形を入り口に、年齢を問わず数学の世界を鑑賞する。映像と音の奥にある法則を、自分の目で発見するための美術館です。</p>
+  </section>
+</main>
+
+<footer>MATHEMATICAL CINEMA <span>Mathematics × Art × Education</span></footer>
+
+<!-- 上映室 -->
+<dialog id="theater" class="theater" aria-labelledby="th-title">
+  <div class="th-top">
+    <button type="button" class="th-back"><span class="arrow" aria-hidden="true">←</span>展示室へ戻る<kbd>Esc</kbd></button>
+    <p class="th-credit"><span id="th-room"></span><span id="th-title"></span></p>
+    <div class="th-actions">
+      <button type="button" class="th-notes-btn" aria-expanded="false" aria-controls="th-notes">解説</button>
+    </div>
+  </div>
+  <div class="screen" id="screen"></div>
+  <aside class="th-notes" id="th-notes" hidden></aside>
+</dialog>
+<noscript>展示室の表示にはJavaScriptを有効にしてください。</noscript>
+</body>
+</html>
